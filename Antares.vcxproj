@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Antares.c" />
+    <ClCompile Include="AntLogo.c" />
+    <ClCompile Include="blobs.c" />
+    <ClCompile Include="BlockImageTest.c" />
+    <ClCompile Include="BlockTest1.c" />
+    <ClCompile Include="cobra.c" />
+    <ClCompile Include="CursorTest1.c" />
+    <ClCompile Include="EVEMO_Test.c" />
+    <ClCompile Include="fizz.c" />
+    <ClCompile Include="FlashErase.c" />
+    <ClCompile Include="FlashLoad.c" />
+    <ClCompile Include="FlashShowImage.c" />
+    <ClCompile Include="FlashShowImageDirect.c" />
+    <ClCompile Include="FlashShowVideoDirect.c" />
+    <ClCompile Include="Fonts.c" />
+    <ClCompile Include="frogger.c" />
+    <ClCompile Include="GameOnDesigner.c" />
+    <ClCompile Include="helloworld.c" />
+    <ClCompile Include="jnr.c" />
+    <ClCompile Include="jpeg.c" />
+    <ClCompile Include="jpeg_scaled.c" />
+    <ClCompile Include="kenney.c" />
+    <ClCompile Include="kenney_720p.c" />
+    <ClCompile Include="kenney_game.c" />
+    <ClCompile Include="logo.c" />
+    <ClCompile Include="MediaFifoTest1.c" />
+    <ClCompile Include="mono.c" />
+    <ClCompile Include="nightstrike.c" />
+    <ClCompile Include="PanelImageTest.c" />
+    <ClCompile Include="PanelTest1.c" />
+    <ClCompile Include="png.c" />
+    <ClCompile Include="radarchart.c" />
+    <ClCompile Include="reflection.c" />
+    <ClCompile Include="simon.c" />
+    <ClCompile Include="simon_wMouse.c" />
+    <ClCompile Include="slotgag.c" />
+    <ClCompile Include="SPI.c" />
+    <ClCompile Include="sprites.c" />
+    <ClCompile Include="Test.c" />
+    <ClCompile Include="TestAssets.c" />
+    <ClCompile Include="tetris.c" />
+    <ClCompile Include="tiled.c" />
+    <ClCompile Include="video1.c" />
+    <ClCompile Include="video1_NoMediaFifo.c" />
+    <ClCompile Include="walk.c" />
+    <ClCompile Include="widgets.c" />
+    <ClCompile Include="WiiClassiController.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="1CogKbM_rja3a.spin2" />
+    <None Include="build.bat" />
+    <None Include="SPI.spin2" />
+    <None Include="SPI_Spin2.spin2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Antares.h" />
+    <ClInclude Include="BlockAssets.h" />
+    <ClInclude Include="BlockImageTest.h" />
+    <ClInclude Include="Blocks.h" />
+    <ClInclude Include="cobra_assets.h" />
+    <ClInclude Include="Colors.h" />
+    <ClInclude Include="DisplaySettings.h" />
+    <ClInclude Include="frogger_assets.h" />
+    <ClInclude Include="I2C.h" />
+    <ClInclude Include="jnr_assets.h" />
+    <ClInclude Include="KenneyAssets.h" />
+    <ClInclude Include="kenney_assets.h" />
+    <ClInclude Include="logo_assets.h" />
+    <ClInclude Include="mono_assets.h" />
+    <ClInclude Include="nightstrike_1_assets.h" />
+    <ClInclude Include="nightstrike_welcome_assets.h" />
+    <ClInclude Include="Panel1.h" />
+    <ClInclude Include="PanelImageTest.h" />
+    <ClInclude Include="Panels.h" />
+    <ClInclude Include="Platform.h" />
+    <ClInclude Include="reflection_assets.h" />
+    <ClInclude Include="slotgag_assets.h" />
+    <ClInclude Include="sprites_assets.h" />
+    <ClInclude Include="TestAssets_Assets.h" />
+    <ClInclude Include="tetris.h" />
+    <ClInclude Include="tiled_assets.h" />
+    <ClInclude Include="touch_cap_811.h" />
+    <ClInclude Include="walk_assets.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="GD2_TranslationNotes.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5EEBC90B-0B63-4A4A-A22D-71347F0FE2A2}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>build.bat</NMakeBuildCommandLine>
+    <NMakeOutput>C:\FlexProp\bin\loadp2.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>
+    </NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>C:\FlexProp\bin\include;</NMakeIncludeSearchPath>
+    <AdditionalOptions>
+    </AdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>build.bat</NMakeBuildCommandLine>
+    <NMakeOutput>Test1.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>D:\Propeller2\FastSpin\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
