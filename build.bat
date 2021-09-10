@@ -4,7 +4,7 @@ REM This is the Matrix Orbital example using Antares
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary EVEMO_Test.c
 
 REM Here are working gd2-lib examples using Antares
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary helloworld.c
+C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\helloworld.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary blobs.c
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary jpeg.c
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary fizz.c
@@ -51,7 +51,7 @@ REM C:\FlexProp\bin\flexspin.exe -DPIN_MISO=58 -DPIN_MOSI=60 -DPIN_SS=61 -DPIN_C
 
 REM AntaresB Hardware examples by RJA 
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary WiiClassicController.c
-C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -DFF_USE_LFN -o Antares.binary GameOnDesigner.c
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -DFF_USE_LFN -o Antares.binary GameOnDesigner.c
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary kenney_720p.c
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary kenney_game.c
 REM NOTE:  Add this to command line to use different pins for uSD:  -DPIN_MISO=10 -DPIN_MOSI=12 -DPIN_SS=13 -DPIN_CLK=11

@@ -10,10 +10,10 @@
 #define USECOGFORSPI
 
 #ifndef USECOGFORSPI
-#include "SPI.c"  //This version doesn't use a cog
+#include "..\Antares\SPI.c"  //This version doesn't use a cog
 Spi SPI;
 #else
-struct __using("SPI.spin2") SPI; //RJA: //This version uses a cog  //Visual Studio will show an error here, but it's OK
+struct __using("..\\Antares\\SPI.spin2") SPI; //RJA: //This version uses a cog  //Visual Studio will show an error here, but it's OK
 #endif // !USECOGFORSPI
 
 

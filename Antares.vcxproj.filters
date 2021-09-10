@@ -1,229 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="blobs.c">
-      <Filter>Examples</Filter>
+    <ClCompile Include="Examples from gd2-lib\helloworld.c" />
+    <ClCompile Include="Antares\Antares.c">
+      <Filter>Antares</Filter>
     </ClCompile>
-    <ClCompile Include="cobra.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="fizz.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="helloworld.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="jpeg.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="kenney.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="logo.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="mono.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="radarchart.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="reflection.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="simon.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="slotgag.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="sprites.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="tiled.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="walk.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="widgets.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="jnr.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="frogger.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="nightstrike.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="video1.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="Test.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="Antares.c" />
-    <ClCompile Include="EVEMO_Test.c">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="SPI.c" />
-    <ClCompile Include="png.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="Fonts.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="AntLogo.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="TestAssets.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="MediaFifoTest1.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="video1_NoMediaFifo.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="CursorTest1.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="PanelTest1.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="tetris.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="FlashLoad.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="FlashShowImage.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="FlashShowImageDirect.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="FlashErase.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="FlashShowVideoDirect.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="PanelImageTest.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockTest1.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockImageTest.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="jpeg_scaled.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="simon_wMouse.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="kenney_game.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="kenney_720p.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="GameOnDesigner.c">
-      <Filter>RayTests</Filter>
-    </ClCompile>
-    <ClCompile Include="WiiClassiController.c">
-      <Filter>RayTests</Filter>
+    <ClCompile Include="Antares\SPI.c">
+      <Filter>Antares</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Platform.h" />
-    <ClInclude Include="touch_cap_811.h" />
-    <ClInclude Include="cobra_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="kenney_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="logo_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="mono_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="reflection_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="slotgag_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="sprites_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="tiled_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="walk_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="jnr_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="frogger_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="nightstrike_1_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="nightstrike_welcome_assets.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="Antares.h" />
-    <ClInclude Include="DisplaySettings.h" />
-    <ClInclude Include="Panels.h" />
-    <ClInclude Include="TestAssets_Assets.h">
-      <Filter>RayTests</Filter>
-    </ClInclude>
-    <ClInclude Include="Panel1.h">
-      <Filter>RayTests</Filter>
-    </ClInclude>
-    <ClInclude Include="Colors.h" />
-    <ClInclude Include="tetris.h">
-      <Filter>RayTests</Filter>
-    </ClInclude>
-    <ClInclude Include="PanelImageTest.h">
-      <Filter>RayTests</Filter>
-    </ClInclude>
-    <ClInclude Include="Blocks.h" />
-    <ClInclude Include="BlockImageTest.h">
-      <Filter>RayTests</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockAssets.h">
-      <Filter>RayTests</Filter>
-    </ClInclude>
-    <ClInclude Include="I2C.h" />
-    <ClInclude Include="KenneyAssets.h">
-      <Filter>RayTests</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="build.bat" />
-    <None Include="SPI.spin2" />
-    <None Include="SPI_Spin2.spin2" />
-    <None Include="1CogKbM_rja3a.spin2" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="GD2_TranslationNotes.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Examples">
-      <UniqueIdentifier>{b316e3f4-34d2-4b8e-b540-98e69caf8622}</UniqueIdentifier>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{1df60f6f-f880-41f7-8539-156fbee5c34b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RayTests">
-      <UniqueIdentifier>{251c852b-5740-4ba4-af2d-5b9340c0b3da}</UniqueIdentifier>
+    <Filter Include="Antares">
+      <UniqueIdentifier>{df581c1a-2163-427c-93ef-1dd666fc685f}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Platform\DisplaySettings.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\Platform.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Antares\Antares.h">
+      <Filter>Antares</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Antares\SPI.spin2">
+      <Filter>Antares</Filter>
+    </None>
   </ItemGroup>
 </Project>

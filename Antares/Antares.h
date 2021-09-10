@@ -11,7 +11,7 @@
 
 //RJA:  Note:  To make the build line simpler, Anteres.c is included below, near line 428
 
-#include "Platform.h"  //type of display and P2 pin#s to use and more are here
+#include "..\Platform\Platform.h"  //type of display and P2 pin#s to use and more are here
 
 // Global Variables 
 uint16_t FifoWriteLocation = 0;  // Don't allow this variable to get out of synch - be careful about manually constructing FIFO commands
