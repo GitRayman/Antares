@@ -1,14 +1,19 @@
 ﻿  Propeller Spin/PASM Compiler 'FlexSpin' (c) 2011-2021 Total Spectrum Software Inc.
   Version 5.5.2 Compiled on: Jul 26 2021
-  helloworld.c
+  video1.c
   |-SPI.spin2
   mount.c
+  usleep.c
   sprintf.c
   fprintf.c
-  malloc.c
+  fopen.c
+  fwrite.c
   mount.c
   fmt.c
   posixio.c
+  isatty.c
+  fputs.c
+  fflush.c
   strncpy.c
   strncat.c
   strncmp.c
@@ -20,17 +25,18 @@
   vfs.c
   errno.c
   posixio.c
+  ioctl.c
   ieee32.c
-  strcpy.c
+  strncpy.c
   memset.c
+  ffunicode.c
   sdmm.cc
   stat.c
   malloc.c
-  strncpy.c
   strncat.c
   strncmp.c
-  strcpy.c
+  strncpy.c
   memset.c
   Antares.p2asm
   Done.
-  Program size is 78632 bytes
+  Program size is 92356 bytes

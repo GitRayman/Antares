@@ -1382,7 +1382,7 @@ void InitFifo(const char* filename)  //adapted from Load_RAW to fill media fifo 
     struct stat s;
     r = stat(filename, &s);
     if (r) {
-        Log("Error:  Unable to stat file: %s", filename);
+        Log("Error:  Unable to stat file: %s\n", filename);
         return false;
     }
     // Open the file on SD card by name

@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"     //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 
 
 //RJA:  video.c  Shows how to play a .avi video using the media fifo.
@@ -8,7 +8,7 @@
 
 void loop()
 {//Play the video in a loop
-    playVideo("test.avi");// fun - 1500.avi"); //sintel.avi");// fun - 1500.avi");
+    playVideo("fun-1500.avi"); //"test.avi"); //"fun-1500.avi"); //sintel.avi");// fun - 1500.avi");"test.avi");
 }
 
 void setup()

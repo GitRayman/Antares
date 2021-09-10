@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE drive
+#include "../Antares/Antares.h"     //RJA implementing this gd2-lib code using Matrix Orbital's EVE drive
 
 #include "slotgag_assets.h"
 

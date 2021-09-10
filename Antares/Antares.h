@@ -490,7 +490,12 @@ void begin()
 
     //get filesystem ready
 #if defined(USE_SD)
-    mount("/files", _vfs_open_sdcard());
+    //mount("/files", _vfs_open_sdcard());  //For Eval pins
+    mount("/files", _vfs_open_sdcardx(uSD_CLK, uSD_SS, uSD_MOSI, uSD_MISO));//clock pin, select pin, data in, and data out pins, in that order
+//#define uSD_MISO  44 
+//#define uSD_MOSI  46 
+//#define uSD_SS  47 
+//#define uSD_CLK  45
     chdir("/files");
 #elif defined(USE_HOST)
     mount("/files", _vfs_open_host());

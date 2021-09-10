@@ -4,23 +4,25 @@ REM This is the Matrix Orbital example using Antares
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary EVEMO_Test.c
 
 REM Here are working gd2-lib examples using Antares
-C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\helloworld.c"
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary blobs.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary jpeg.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary fizz.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary simon.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary logo.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary mono.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary reflection.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary slotgag.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary tiled.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary walk.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary sprites.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary widgets.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary kenney.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary jnr.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary frogger.c
-REM C:\FlexProp\bin\flexspin.exe -O2,!cse -2 -L C:\FlexProp\include -o Antares.binary video1.c
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\helloworld.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\blobs.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\jpeg.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\fizz.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\simon.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\logo.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\mono.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\reflection.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\slotgag.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\tiled.c"
+REM Walk needs fixing for 4.3 in.
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\walk.c"  
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\sprites.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\widgets.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\kenney.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\jnr.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\frogger.c"
+REM This one needs video file to be on uSD and correct uSD pins defined in platform.h  Also specifying to use long file names...
+C:\FlexProp\bin\flexspin.exe -O2,!cse -2 -DFF_USE_LFN  -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\video1.c"
 
 
 REM Examples by RJA

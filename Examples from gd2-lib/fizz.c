@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code with help of Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"     //RJA implementing this gd2-lib code with help of Matrix Orbital's EVE driver
 
 void setup()
 {

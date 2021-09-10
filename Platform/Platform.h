@@ -2,16 +2,22 @@
 #ifndef _PLATFORM_H_
 #define _PLATFORM_H_
 
+//Add in some needed includes here
+#include "propeller2.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "stdint.h"
+#include "stdbool.h"
 
-
-
-//Antares uses a P2 smartpin in NCO mode to give clock to EVE3 chip in order to get TV and monitors to accept VGA/720p signals selected by the below
-//Note:  Eve sometimes gets stuck when switched from VGA to 720p
 //Pick one: (see more options in DisplaySettings.h)
-#define EVE3_720p  
-//#define EVE3_VGA  
 //#define EVE2_70  //7" WVGA LCD
-//#define EVE2_43  //4.3" LCD
+#define EVE2_43  //4.3" LCD
+//#define EVE3_720p  //Antares-B 
+//#define EVE3_VGA   //Antares-B
+
+
+//Settings for various types of displays are here, the define above selects display settings in this file
+#include "DisplaySettings.h" 
 
 //Note:  For VGA, there other frequency options, but for 720p we need 297 MHz
 #ifdef EVE3_VGA
@@ -25,14 +31,47 @@ enum { _clkfreq = 237600000 };  //24 Hz
 #endif
 
 
-enum { heapsize = 16000 };  //override the default heapsize to give more, if needed
+enum { heapsize = 16000 };  //override the default heapsize to give more, if needed for malloc
 
+//I/O Pin Settings
 //Pick one of these board configs or add your own
-#define AntaresB
-//#define Board1
-//#define Dazzler
+#define Board1  //This is a generic P2 board
+//#define Dazzler  //This is a special P2 based board with Arduino layout to host Dazzler 
+//#define AntaresB  //This is a special P2 based board that outputs VGA from EVE
+
+
+
+//RJA's P2 Board1 with EVE2 display
+#ifdef Board1
+#define FT800_CS                                (30)
+#define FT800_INT                               (28)
+#define FT800_PD_N                              (31)
+#define FT800_SEL_PIN           FT800_CS
+#define FT800_MOSI								(24)
+#define FT800_MISO								(25)
+#define FT800_CLK								(29)
+#define uSD_MISO  44 
+#define uSD_MOSI  46 
+#define uSD_SS  47 
+#define uSD_CLK  45
+#endif
+
+//RJA's Arduino style P2 Board with Dazzler
+#ifdef Dazzler
+#define FT800_CS                                (50)
+#define FT800_INT                               (36)
+#define FT800_PD_N                              (-1)
+#define FT800_SEL_PIN           FT800_CS
+#define FT800_MOSI								(53)
+#define FT800_MISO								(54)
+#define FT800_CLK								(55)
+#define Dazzler_CS								(52)
+#define DazzlerSD_CS								(51)
+#endif
 
 //P2 Eval board with AntaresB 
+//Antares-B uses a P2 smartpin in NCO mode to give clock to EVE3 chip in order to get TV and monitors to accept VGA/720p signals selected by the below
+//Note:  Eve sometimes gets stuck when switched from VGA to 720p
 #ifdef AntaresB
 #define basepin (0) //This is the starting pin on which the Antares-B adapter is situated
 //Using this P2 pin to supply ~12 MHz clock to eve chip
@@ -54,30 +93,12 @@ enum { heapsize = 16000 };  //override the default heapsize to give more, if nee
 #define FT800_MOSI								(basepin+0)
 #define FT800_MISO								(basepin+1)
 #define FT800_CLK								(basepin+4)
-#endif
 
-//RJA's P2 Board1 with EVE2 display
-#ifdef Board1
-#define FT800_CS                                (30)
-#define FT800_INT                               (28)
-#define FT800_PD_N                              (31)
-#define FT800_SEL_PIN           FT800_CS
-#define FT800_MOSI								(24)
-#define FT800_MISO								(25)
-#define FT800_CLK								(29)
-#endif
-
-//RJA's Arduino style P2 Board with Dazzler
-#ifdef Dazzler
-#define FT800_CS                                (50)
-#define FT800_INT                               (36)
-#define FT800_PD_N                              (-1)
-#define FT800_SEL_PIN           FT800_CS
-#define FT800_MOSI								(53)
-#define FT800_MISO								(54)
-#define FT800_CLK								(55)
-#define Dazzler_CS								(52)
-#define DazzlerSD_CS								(51)
+//The Eval Board's uSD pins
+#define uSD_MISO  58 
+#define uSD_MOSI  59 
+#define uSD_SS  60 
+#define uSD_CLK  61
 #endif
 
 
@@ -115,13 +136,6 @@ enum { heapsize = 16000 };  //override the default heapsize to give more, if nee
 #define _BAUD 2000000
 #endif
 
-//Add in some needed includes here
-#include "propeller2.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "stdint.h"
-#include "stdbool.h"
-#include "DisplaySettings.h" //Settings for various types of displays are here, 
 
 
 //some types not yet defined in FlexSpin, or needed to translate Arduino code

@@ -21,15 +21,42 @@
   <ItemGroup>
     <ClCompile Include="Antares\Antares.c" />
     <ClCompile Include="Antares\SPI.c" />
+    <ClCompile Include="Examples from gd2-lib\blobs.c" />
+    <ClCompile Include="Examples from gd2-lib\fizz.c" />
+    <ClCompile Include="Examples from gd2-lib\frogger.c" />
     <ClCompile Include="Examples from gd2-lib\helloworld.c" />
+    <ClCompile Include="Examples from gd2-lib\jnr.c" />
+    <ClCompile Include="Examples from gd2-lib\jpeg.c" />
+    <ClCompile Include="Examples from gd2-lib\kenney.c" />
+    <ClCompile Include="Examples from gd2-lib\logo.c" />
+    <ClCompile Include="Examples from gd2-lib\mono.c" />
+    <ClCompile Include="Examples from gd2-lib\reflection.c" />
+    <ClCompile Include="Examples from gd2-lib\simon.c" />
+    <ClCompile Include="Examples from gd2-lib\slotgag.c" />
+    <ClCompile Include="Examples from gd2-lib\sprites.c" />
+    <ClCompile Include="Examples from gd2-lib\tiled.c" />
+    <ClCompile Include="Examples from gd2-lib\video1.c" />
+    <ClCompile Include="Examples from gd2-lib\walk.c" />
+    <ClCompile Include="Examples from gd2-lib\widgets.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Antares\Antares.h" />
+    <ClInclude Include="Examples from gd2-lib\frogger_assets.h" />
+    <ClInclude Include="Examples from gd2-lib\jnr_assets.h" />
+    <ClInclude Include="Examples from gd2-lib\kenney_assets.h" />
+    <ClInclude Include="Examples from gd2-lib\mono_assets.h" />
+    <ClInclude Include="Examples from gd2-lib\reflection_assets.h" />
+    <ClInclude Include="Examples from gd2-lib\slotgag_assets.h" />
+    <ClInclude Include="Examples from gd2-lib\sprites_assets.h" />
+    <ClInclude Include="Examples from gd2-lib\tiled_assets.h" />
+    <ClInclude Include="Examples from gd2-lib\walk_assets.h" />
     <ClInclude Include="Platform\DisplaySettings.h" />
     <ClInclude Include="Platform\Platform.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Antares\SPI.spin2" />
+    <None Include="build.bat" />
+    <None Include="Examples from gd2-lib\logo.gd2" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5EEBC90B-0B63-4A4A-A22D-71347F0FE2A2}</ProjectGuid>

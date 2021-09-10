@@ -1,7 +1,7 @@
 //RJA:  This gd2-lib example paints a bunch of expanding filled circles on the screen
 //      The original version used touchsreen to set circle locations, but using random locations here as don't have touchscreen
 
-#include "Antares.h"  
+#include "../Antares/Antares.h"  
 
 #define NBLOBS      128
 

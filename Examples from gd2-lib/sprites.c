@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"     //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 //RJA:  Had to add a FIFO update trigger to get to 2001 sprites
 
 #include "sprites_assets.h"
