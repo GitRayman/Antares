@@ -653,25 +653,32 @@ struct {
 
 void get_inputs()
 {//10Sep21: Fixing this for touchscreen use
+#ifdef USE_TOUCHSCREEN
+    if (USE_TOUCHSCREEN)
+    {
+        if (RESISTIVE_TOUCH)
+        {//for resistitve touch
+            //finish();  //RJA doesn't think we need this here...
+            rd_n(bi, RAM_REG + REG_TRACKER, 4);
+            rd_n(bi + 4, RAM_REG + REG_TOUCH_RZ, 13);
+            rd_n(bi + 17, RAM_REG + REG_TAG, 1);
+            inputs.touching = (inputs.x != -32768);
+            inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
+        }
+        else
+        {//For capacitive touch
+            //finish();  //RJA doesn't think we need this here...
+            uint8_t* bi = (uint8_t*)&inputs;
+            rd_n(bi, RAM_REG + REG_TRACKER, 4);
+            rd_n(bi + 4, RAM_REG + REG_CTOUCH_TOUCH_XY, 4);
+            rd_n(bi + 8, RAM_REG + REG_CTOUCH_TAG_XY, 4);
+            rd_n(bi + 12, RAM_REG + REG_CTOUCH_TAG, 1);
+            inputs.touching = (inputs.x != -32768);
+            inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
+        }
+    }
 
-    ////for resistitve touch
-    //finish();  //RJA doesn't think we need this here...
-    //rd_n(bi, RAM_REG + REG_TRACKER, 4);
-    //rd_n(bi + 4, RAM_REG + REG_TOUCH_RZ, 13);
-    //rd_n(bi + 17, RAM_REG + REG_TAG, 1);
-    //inputs.touching = (inputs.x != -32768);
-    //inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
-
-    //For capacitive touch
-    //finish();  //RJA doesn't think we need this here...
-    uint8_t* bi = (uint8_t*)&inputs;
-    rd_n(bi, RAM_REG + REG_TRACKER, 4);
-    rd_n(bi + 4, RAM_REG + REG_CTOUCH_TOUCH_XY, 4);
-    rd_n(bi + 8, RAM_REG + REG_CTOUCH_TAG_XY, 4);
-    rd_n(bi + 12, RAM_REG + REG_CTOUCH_TAG, 1);
-    inputs.touching = (inputs.x != -32768);
-    inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
-
+#endif //USE_TOUCHSCREEN
 }
 
 

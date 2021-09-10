@@ -25,7 +25,7 @@
 #define DITHER      0
 #endif
 
-#ifdef EVE3_1080p
+#ifdef EVE3_1080p  //doesn't seem to work with EVE3 :(
 //VGA output using NCO clock to drive EVE
 #define DWIDTH      1920
 #define DHEIGHT     1080
@@ -70,6 +70,8 @@
 #define VSIZE       480
 #define CSPREAD     0
 #define DITHER      0
+#define USE_TOUCHSCREEN true
+#define RESISTIVE_TOUCH false
 #endif
 
 
@@ -94,6 +96,8 @@
 #define VSIZE      480
 #define CSPREAD      0
 #define DITHER       1
+#define USE_TOUCHSCREEN true
+#define RESISTIVE_TOUCH false
 #endif
 
 #ifdef EVE2_50
@@ -116,6 +120,8 @@
 #define VSIZE      480
 #define CSPREAD      0
 #define DITHER       1
+#define USE_TOUCHSCREEN true
+#define RESISTIVE_TOUCH false
 #endif
 
 #ifdef EVE2_43
@@ -138,6 +144,8 @@
 #define VSIZE      272
 #define CSPREAD      1
 #define DITHER       1
+#define USE_TOUCHSCREEN true
+#define RESISTIVE_TOUCH false
 #endif
 
 #ifdef EVE2_39
@@ -160,6 +168,8 @@
 #define VSIZE      128
 #define CSPREAD      1
 #define DITHER       1
+#define USE_TOUCHSCREEN true
+#define RESISTIVE_TOUCH false
 #endif
   
 #ifdef EVE2_38
@@ -182,6 +192,8 @@
 #define VSIZE      272
 #define CSPREAD      1
 #define DITHER       1
+#define USE_TOUCHSCREEN true
+#define RESISTIVE_TOUCH false
 #endif
 
 #ifdef EVE2_35
@@ -204,6 +216,8 @@
 #define VSIZE      240
 #define CSPREAD      1
 #define DITHER       1
+#define USE_TOUCHSCREEN true
+#define RESISTIVE_TOUCH false
 #endif
 
 #ifdef EVE2_29
@@ -226,4 +240,6 @@
 #define VSIZE      102
 #define CSPREAD      1
 #define DITHER       1
+#define USE_TOUCHSCREEN true
+#define RESISTIVE_TOUCH false
 #endif
