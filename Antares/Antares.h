@@ -406,6 +406,7 @@ void wr8(uint32_t, uint8_t parameter);
 uint8_t rd8(uint32_t RegAddr);
 uint16_t rd16(uint32_t RegAddr);
 uint32_t rd32(uint32_t RegAddr);
+void rd_n(uint8_t* pBuf, uint32_t address, uint32_t n);
 void Send_CMD(uint32_t data);
 void UpdateFIFO(void);
 uint8_t Cmd_READ_REG_ID(void);
@@ -614,27 +615,62 @@ typedef struct  xyStruct {
     //int nearer_than(int distance, class xy& other);
 } xy;
 
-struct {
+//For resistive touch
+//struct {
+//
+//    uint16_t track_tag;
+//    uint16_t track_val;
+//    uint16_t rz;
+//    uint16_t __dummy_1;
+//    int16_t y;
+//    int16_t x;
+//
+//    int16_t tag_y;
+//    int16_t tag_x;
+//    uint8_t tag;
+//    uint8_t ptag;
+//    uint8_t touching;
+//    xy xytouch;
+//    //Add wii back in?
+//} inputs;
 
+//For capacitive touch
+struct {
     uint16_t track_tag;
     uint16_t track_val;
-    uint16_t rz;
-    uint16_t __dummy_1;
+
+    int16_t y;
+    int16_t x;
 
     int16_t tag_y;
     int16_t tag_x;
     uint8_t tag;
-    uint8_t ptag;
+    //uint8_t ptag;
     uint8_t touching;
-
-
-    int16_t x;
-    int16_t y;
     xy xytouch;
+    //Add wii back in?
 } inputs;
 
 void get_inputs()
-{//TODO:  Fix this when have touchscreen
+{//10Sep21: Fixing this for touchscreen use
+
+    ////for resistitve touch
+    //finish();  //RJA doesn't think we need this here...
+    //rd_n(bi, RAM_REG + REG_TRACKER, 4);
+    //rd_n(bi + 4, RAM_REG + REG_TOUCH_RZ, 13);
+    //rd_n(bi + 17, RAM_REG + REG_TAG, 1);
+    //inputs.touching = (inputs.x != -32768);
+    //inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
+
+    //For capacitive touch
+    //finish();  //RJA doesn't think we need this here...
+    uint8_t* bi = (uint8_t*)&inputs;
+    rd_n(bi, RAM_REG + REG_TRACKER, 4);
+    rd_n(bi + 4, RAM_REG + REG_CTOUCH_TOUCH_XY, 4);
+    rd_n(bi + 8, RAM_REG + REG_CTOUCH_TAG_XY, 4);
+    rd_n(bi + 12, RAM_REG + REG_CTOUCH_TAG, 1);
+    inputs.touching = (inputs.x != -32768);
+    inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
 
 }
 

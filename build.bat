@@ -5,7 +5,7 @@ REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary EVE
 
 REM Here are working gd2-lib examples using Antares
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\helloworld.c"
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\blobs.c"
+C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\blobs.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\jpeg.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\fizz.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\simon.c"
@@ -22,7 +22,7 @@ REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Ex
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\jnr.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\frogger.c"
 REM This one needs video file to be on uSD and correct uSD pins defined in platform.h  Also specifying to use long file names...
-C:\FlexProp\bin\flexspin.exe -O2,!cse -2 -DFF_USE_LFN  -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\video1.c"
+REM C:\FlexProp\bin\flexspin.exe -O2,!cse -2 -DFF_USE_LFN  -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\video1.c"
 
 
 REM Examples by RJA

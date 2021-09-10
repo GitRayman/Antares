@@ -20,10 +20,11 @@ void loop()
 {
   static byte blob_i;
   get_inputs();  //RJA:  This would update touchscreen data if we had a touchscreen
-  if ((rand() % 10)==1)//inputs.x != -32768)     //RJA don't have real touchscreen, so faking touches
+  if (inputs.x != -32768)  //((rand() % 10)==1)//inputs.x != -32768)     //RJA don't have real touchscreen, so faking touches
   {
-      inputs.xytouch.x = (rand() % w)*16;
-      inputs.xytouch.y = (rand() % h) *16;
+      //inputs.xytouch.x = (rand() % w)*16;
+      //inputs.xytouch.y = (rand() % h) *16;
+      //printf("Touching: %d, %d\n", inputs.xytouch.x, inputs.xytouch.y);
     blobs[blob_i] = inputs.xytouch;  
   }
   else

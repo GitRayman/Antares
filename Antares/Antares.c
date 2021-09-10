@@ -398,6 +398,22 @@ uint8_t rd8(uint32_t address)
   return (buf[0]);  
 }
 
+void rd_n(uint8_t* pBuf, uint32_t address, uint32_t n)
+{
+
+    SPI_Enable();
+
+    SPI_Write((address >> 16) & 0x3F);
+    SPI_Write((address >> 8) & 0xff);
+    SPI_Write(address & 0xff);
+
+    SPI_ReadBuffer(pBuf, n);
+
+    SPI_Disable();
+
+    return;
+}
+
 // *** Send_Cmd() - this is like cmd() in (some) Eve docs - sends 32 bits but does not update the write pointer ***
 // FT81x Series Programmers Guide Section 5.1.1 - Circular Buffer (AKA "the FIFO" and "Command buffer" and "CoProcessor")
 // Don't miss section 5.3 - Interaction with RAM_DL
