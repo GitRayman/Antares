@@ -43,4 +43,4 @@
 - This example explores the effects of the A..F Bitmap Transform functions
 - Uses the Panels API so that a USB mouse can interact with on screen sliders
 - The sliders adjust the value of these bitmap transform values over a small range to see what they do
-- Note:  Fortunately, EVE3 has CoPro commands like scale and rotate that let you not have to learn this!
+  > Note:  Fortunately, EVE3 has CoPro commands like scale and rotate that let you not have to learn this!
