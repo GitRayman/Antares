@@ -44,3 +44,8 @@
 - Uses the Panels API so that a USB mouse can interact with on screen sliders
 - The sliders adjust the value of these bitmap transform values over a small range to see what they do
   > Note:  Fortunately, EVE3 has CoPro commands like scale and rotate that let you not have to learn this!
+
+## BlockImageTest.c
+- This is just a test to see if Blockly could be implemented with EVE...
+- It just shows one repeat block that you can move around the screen.
+- Looks like it could work, but would take a lot more programming...
