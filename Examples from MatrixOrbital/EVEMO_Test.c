@@ -1,4 +1,4 @@
-#include "Antares.h"  //Test, adapted from Matrix Orbital's test program
+#include "..\Antares\Antares.h"  //Test, adapted from Matrix Orbital's test program
 
 
 void MakeScreen_MatrixOrbital(uint8_t DotSize)

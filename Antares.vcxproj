@@ -38,6 +38,20 @@
     <ClCompile Include="Examples from gd2-lib\video1.c" />
     <ClCompile Include="Examples from gd2-lib\walk.c" />
     <ClCompile Include="Examples from gd2-lib\widgets.c" />
+    <ClCompile Include="Examples from MatrixOrbital\EVEMO_Test.c" />
+    <ClCompile Include="Examples\AntLogo.c" />
+    <ClCompile Include="Examples\BlockImageTest.c" />
+    <ClCompile Include="Examples\CursorTest1.c" />
+    <ClCompile Include="Examples\Fonts.c" />
+    <ClCompile Include="Examples\GPIO_InputTest.c" />
+    <ClCompile Include="Examples\jpeg_scaled.c" />
+    <ClCompile Include="Examples\MediaFifoTest1.c" />
+    <ClCompile Include="Examples\PanelImageTest.c" />
+    <ClCompile Include="Examples\PanelTest1.c" />
+    <ClCompile Include="Examples\png.c" />
+    <ClCompile Include="Examples\simon_wMouse.c" />
+    <ClCompile Include="Examples\TestAssets.c" />
+    <ClCompile Include="Examples\tetris.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Antares\Antares.h" />
@@ -50,6 +64,15 @@
     <ClInclude Include="Examples from gd2-lib\sprites_assets.h" />
     <ClInclude Include="Examples from gd2-lib\tiled_assets.h" />
     <ClInclude Include="Examples from gd2-lib\walk_assets.h" />
+    <ClInclude Include="Examples\Block1.h" />
+    <ClInclude Include="Examples\BlockAssets.h" />
+    <ClInclude Include="Examples\BlockImageTest.h" />
+    <ClInclude Include="Examples\Blocks.h" />
+    <ClInclude Include="Examples\Panel1.h" />
+    <ClInclude Include="Examples\PanelImageTest.h" />
+    <ClInclude Include="Examples\Panels.h" />
+    <ClInclude Include="Examples\TestAssets_Assets.h" />
+    <ClInclude Include="Examples\tetris.h" />
     <ClInclude Include="Platform\DisplaySettings.h" />
     <ClInclude Include="Platform\Platform.h" />
   </ItemGroup>
@@ -57,6 +80,8 @@
     <None Include="Antares\SPI.spin2" />
     <None Include="build.bat" />
     <None Include="Examples from gd2-lib\logo.gd2" />
+    <None Include="Examples\BlockAssets.ant" />
+    <None Include="Examples\TestAssets_Assets.ant" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5EEBC90B-0B63-4A4A-A22D-71347F0FE2A2}</ProjectGuid>

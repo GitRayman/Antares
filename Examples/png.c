@@ -1,11 +1,11 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 
 //RJA:  This gd2-lib example shows a jpg or png image on screen
 //Note:  The decompresses size of the image must fit in GRAM... 
 
-#ifdef USE_HOST
+#ifdef USE_HOST //load file from PC using Plan9
 char filename[] = "streamer.png";
-#elif defined USE_SD
+#elif defined USE_SD  //load file from uSD on P2 board
 char filename[] = "streamer.png";
 #endif 
 

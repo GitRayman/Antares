@@ -58,6 +58,48 @@
     <ClCompile Include="Examples from gd2-lib\helloworld.c">
       <Filter>Examples from gd2-lib</Filter>
     </ClCompile>
+    <ClCompile Include="Examples from MatrixOrbital\EVEMO_Test.c">
+      <Filter>Examples from MatrixOrbital</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\AntLogo.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\BlockImageTest.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\CursorTest1.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\Fonts.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\GPIO_InputTest.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\jpeg_scaled.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\MediaFifoTest1.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\PanelImageTest.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\PanelTest1.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\png.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\simon_wMouse.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\TestAssets.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples\tetris.c">
+      <Filter>Examples</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Platform">
@@ -68,6 +110,12 @@
     </Filter>
     <Filter Include="Examples from gd2-lib">
       <UniqueIdentifier>{d3048f10-c54c-4fc5-9eaa-d4c41176a975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Examples from MatrixOrbital">
+      <UniqueIdentifier>{6b8cac35-9f7e-414b-bd07-12fef9a365b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Examples">
+      <UniqueIdentifier>{1e79bb80-d158-4e7b-864f-67311b84eabe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +155,33 @@
     <ClInclude Include="Examples from gd2-lib\walk_assets.h">
       <Filter>Examples from gd2-lib</Filter>
     </ClInclude>
+    <ClInclude Include="Examples\Block1.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples\BlockAssets.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples\BlockImageTest.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples\Blocks.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples\Panel1.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples\PanelImageTest.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples\Panels.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples\TestAssets_Assets.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="Examples\tetris.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Antares\SPI.spin2">
@@ -115,6 +190,12 @@
     <None Include="build.bat" />
     <None Include="Examples from gd2-lib\logo.gd2">
       <Filter>Examples from gd2-lib</Filter>
+    </None>
+    <None Include="Examples\BlockAssets.ant">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="Examples\TestAssets_Assets.ant">
+      <Filter>Examples</Filter>
     </None>
   </ItemGroup>
 </Project>

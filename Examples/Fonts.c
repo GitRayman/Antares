@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"    //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 
 //Fonts.c - Demonstrate how to use fonts created by the Eve Asset Builder
 //Long filenames uses here assuming using Plan9 to access files from host
@@ -53,8 +53,8 @@ void loop()
     Cmd_SetFont2(font2_FONT_HANDLE, font2_FONT_FILE_ADDRESS, font2_FIRST_CHARACTER);
     
     //Try out the fonts
-    Cmd_Text(180, 180, font1_FONT_HANDLE, 0, "Gameria font in L1 format");
-    Cmd_Text(150, 280, font2_FONT_HANDLE, 0, "SPACEARE font in L4 format");
+    Cmd_Text(18, 18, font1_FONT_HANDLE, 0, "Gameria font in L1 format");
+    Cmd_Text(50, 80, font2_FONT_HANDLE, 0, "SPACEARE font in L4 format");
 
     //execute display list and start a new one
     swap();

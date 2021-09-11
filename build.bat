@@ -4,7 +4,7 @@ REM Uncomment the one you want to try and then run this batch file
 REM -O2,!cse  <-- Use this if -O2 doesn't work
 
 REM This is the Matrix Orbital example using Antares
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary EVEMO_Test.c
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from MatrixOrbital\EVEMO_Test.c"
 
 REM Here are working gd2-lib examples using Antares
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\helloworld.c"
@@ -17,7 +17,7 @@ REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Ex
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\reflection.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\slotgag.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\tiled.c"
-C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\walk.c"  
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\walk.c"  
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\sprites.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\widgets.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples from gd2-lib\kenney.c"
@@ -28,19 +28,19 @@ REM C:\FlexProp\bin\flexspin.exe -O2,!cse -2 -DFF_USE_LFN  -L C:\FlexProp\includ
 
 
 REM Examples by RJA
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary png.c
-REM C:\FlexProp\bin\flexspin.exe -2 -DFF_USE_LFN=1 -L C:\FlexProp\include -o Antares.binary Fonts.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary AntLogo.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary TestAssets.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary MediaFifoTest1.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary CursorTest1.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary PanelTest1.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary Tetris.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary simon_wMouse.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary GPIO_InputTest.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary PanelImageTest.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary BlockImageTest.c
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary jpeg_scaled.c
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\png.c"
+C:\FlexProp\bin\flexspin.exe -2 -DFF_USE_LFN=1 -L C:\FlexProp\include -o Antares.binary "Examples\Fonts.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\AntLogo.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\TestAssets.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\MediaFifoTest1.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\CursorTest1.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\PanelTest1.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\Tetris.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\simon_wMouse.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\GPIO_InputTest.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\PanelImageTest.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\BlockImageTest.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\jpeg_scaled.c"
 
 REM Flash Examples by RJA
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary FlashErase.c
