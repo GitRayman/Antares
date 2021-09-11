@@ -8,7 +8,7 @@
 #define MaxPanelText (1920/16) //make it width of screen in tiles
 #define MaxPanelObjects 100
 
-#include "Colors.h"
+#include "../Examples/Colors.h"
 
 enum PanelObjectTypes { PanelType = 0, ButtonType = 1, TextType, ToggleType, SliderType, ScrollBarType, GaugeType, LedType, KeysType,
                        GraphicsAreaType, GraphicsObjectType, ProgressType, DialType, NumberType, ClockType, ImageType };

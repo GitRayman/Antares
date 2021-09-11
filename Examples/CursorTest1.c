@@ -1,6 +1,6 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"    //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 
-#include "Panels.h"  //for mouse things
+#include "../Examples/Panels.h"  //for mouse things
 
 //RJA:  This example draws a mouse cursor controlled by USB mouse on top of bird image (image takes a while to load)
 

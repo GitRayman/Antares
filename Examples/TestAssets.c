@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 
 //This program shows how to use assets created by the Antares Assets Builder
 //Alternatively, you could use the Gameduino Assets builder

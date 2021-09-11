@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 
 
 //RJA:  MediaFifoTest1.c  Shows how to display an image using the media fifo.
@@ -73,7 +73,7 @@ void TestLoadImage()
     Cmd_SetBitmap(0, RGB565, image_width, image_height);  //Seems we need to provide image information when we load an image using the media fifo
 
     Begin(BITMAPS);
-    Vertex2ii(100, 100);
+    Vertex2ii(50, 50);
     swap(); //Image should now be showing
 
     // Get the read pointer where the GPU is working currently and the write pointer we sent, should be equal when done
@@ -82,7 +82,7 @@ void TestLoadImage()
         usleep(10000);
         mf_rp = rd32(REG_MEDIAFIFO_READ + RAM_REG);
         wp = rd32(REG_MEDIAFIFO_WRITE + RAM_REG);
-        printf("Read pointer = %dm Write pointer= %d\n", mf_rp, wp);
+        printf("Read pointer = %d, Write pointer= %d\n", mf_rp, wp);
     } while (mf_rp != wp);
     printf("Processing of media fifo complete.\n\n");
 

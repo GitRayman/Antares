@@ -5,7 +5,7 @@
 //Adapted for P2 and FlexSpin by Raymond Allen
 //Currently uses host's keyboard for control so leave terminal window open
 
-#include "Antares.h" //RJA
+#include "../Antares/Antares.h" //RJA
 #include "Colors.h"
 
 char filename[] = "Tetris1.png";  //background image
