@@ -6,7 +6,7 @@ API for using the FTDI EVE 2/3/4 GPU with Parallax P2 MCU and FlexProp C
   > Since the P2 currently has no C++ compiler finished, the Gameduino library was ported back to C to be compiled with the [FlexProp C compiler](https://github.com/totalspectrum/flexprop/).
 - The [Matrix Orbital library](https://github.com/MatrixOrbital/EVE2-Library) was used for the low level interface.
 
-This library has been tested with [Matrix Orbital](https://www.matrixorbital.com/) and [Newhaven](https://www.newhavendisplay.com/) EVE displays.
+This library has been tested with [Matrix Orbital](https://www.matrixorbital.com/) and [Newhaven](https://www.newhavendisplay.com/) EVE displays.  There are other companies that sell displays that are probably compatible as well.
 
 ## Usage
 - There are several examples here, many adapted from Gameduino, that show how to use the library
@@ -17,6 +17,11 @@ This library has been tested with [Matrix Orbital](https://www.matrixorbital.com
 - The list of display options is in DisplaySettings.h, which is included in Platform.h
   - The touchscreen options are also definined here
   - Resistive touchscreens have extra options for how to handle the calibration data 
+
+## References
+- The [EVE 2/3 Programming Guide](https://brtchip.com/wp-content/uploads/Support/Documentation/Programming_Guides/ICs/EVE/BRT_AN_033_BT81X_Series_Programming_Guide.pdf) is extremely useful for figuring out how to interface with EVE.
+- The [EVE IC Datasheets](https://brtchip.com/datasheets/#toggle-id-1) are also very useful. 
+- In addition to the [Gameduino library](https://github.com/jamesbowman/gd2-lib) and the [Matrix Orbital library](https://github.com/MatrixOrbital/EVE2-Library), there are several [FTDI (AKA Bridgetek) examples](https://brtchip.com/SoftwareExamples-eve/) that may work with some adaptation.  The FTDI API is full featured, but very complex.  The Matrix Orbital version of the lower level interfacing used by Antares is much simpler to follow.
 
 ## Offshoots
 Some offshoots of Antares are:
