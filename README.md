@@ -20,7 +20,10 @@ This library has been tested with [Matrix Orbital](https://www.matrixorbital.com
 
 ## Offshoots
 Some offshoots of Antares are:
-- Antares-Assets:  A port of the Gameduino asset builder that runs natively on the P2.
+- Antares-Assets:  A clone of the [Gameduino asset builder] (https://github.com/jamesbowman/gd2-asset) that runs natively on the P2.
+  > Assets are a .h file (and a .ant file for placement on uSD card) that automagically load images into EVE's RAM from uSD and configure bitmap handles for useage.
+  > You can also use Gameduino assets, as demonstrated in several gd2-lib examples.
+  > The Gameduino asset builder has more options and may be a preferred option, if you can get it to work on your system. 
 - Antares-B:  EVE to 720p adapter board (VGA and HDMI versions in development).  Let's you connect EVE to TV or monitor for HD graphics.
 - Antares-Panels:  A helper API for more easily generating and interfacing with GUI elements.
 
