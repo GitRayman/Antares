@@ -37,7 +37,7 @@ Some offshoots of Antares are:
   - Assets are a .h file (and a .ant file for placement on uSD card) that automagically load images into EVE's RAM from uSD and configure bitmap handles for useage.
   - You can also use Gameduino assets, as demonstrated in several gd2-lib examples.
   - The Gameduino asset builder has more options and may be a preferred option, if you can get it to work on your system. 
-- Antares-B:  EVE to 720p adapter board (VGA and HDMI versions in development).  Let's you connect EVE to TV or monitor for HD graphics.
+- Antares-B:  [EVE to 720p adapter board](https://forums.parallax.com/discussion/172636/720p-full-color-graphics-with-eve3-gpu) (VGA and HDMI versions in development).  Let's you connect EVE to TV or monitor for HD graphics.
 - Antares-Panels:  A helper API for more easily generating and interfacing with GUI elements.
 
 
