@@ -29,3 +29,6 @@
 ## PanelTest1.c
 - This example tests the Panels API and shows several controls that interact with USB mouse
 
+## Tetris.c
+- It's Tetris!  This is a Tetris game meant for 720p and controlled via the hosts computer keyboard using WASD keys
+
