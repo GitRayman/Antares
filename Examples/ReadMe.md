@@ -32,3 +32,15 @@
 ## Tetris.c
 - It's Tetris!  This is a Tetris game meant for 720p and controlled via the hosts computer keyboard using WASD keys
 
+## Simon_wMouse.c
+- The GD2 example modified for use USB mouse and cursor instead of touchscreen.  Has sound.
+
+## GPIO_InputTest.c
+- Shows input from EVE's GPIO pins, GPIO0 and GPIO1.
+- This may work with regular EVE lcds too, but I don't think they bring these pins out for use.
+ 
+## PanelImageTest.c
+- This example explores the effects of the A..F Bitmap Transform functions
+- Uses the Panels API so that a USB mouse can interact with on screen sliders
+- The sliders adjust the value of these bitmap transform values over a small range to see what they do
+- Note:  Fortunately, EVE3 has CoPro commands like scale and rotate that let you not have to learn this!
