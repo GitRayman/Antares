@@ -1,5 +1,5 @@
 //Use GPIO0 and GPIO1 as inputs and display status on screen
-#include "Antares.h"  
+#include "../Antares/Antares.h"  
 
 //Note:  The GPIOs have weak pullups that will make them read 1 if nothing is connected
 //       The default drive strength is 5 mA for these GPIO, but this can be increased via REG_GPIO

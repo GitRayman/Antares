@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 
 //RJA:  This example explores the effects of the A..F Bitmap Transform functions
 //     The sliders adjust the value of these bitmap transform values over a small range to see what they do

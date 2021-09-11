@@ -1,4 +1,4 @@
-#include "Antares.h"  //RJA implementing this gd2-lib code using Matrix Orbital's driver
+#include "../Antares/Antares.h"  //RJA implementing this gd2-lib code using Matrix Orbital's driver
 
 //RJA:  This gd2-lib example shows a jpg or png image on screen, now scaled to be larger on screen
 //Note:  The decompresses size of the image must fit in GRAM... 
@@ -21,7 +21,6 @@ void loop()
 {
     ClearColorRGB(55, 55, 55);
     Clear();
-    //Cmd_SetBitmap(0, RGB565, 896, 504);  //Don't need this because works automagically when just one bitmap handle in use...
     
     int scale = 3;
     cmd_loadidentity();

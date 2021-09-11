@@ -12,15 +12,15 @@
 //EVE Display Type
 //Pick one: (see more options in DisplaySettings.h)
 //#define EVE2_70  //7" WVGA LCD
-//#define EVE2_43  //4.3" LCD
-#define EVE3_720p  //Antares-B 
+#define EVE2_43  //4.3" LCD
+//#define EVE3_720p  //Antares-B 
 //#define EVE3_VGA   //Antares-B
 
 //I/O Pin Settings
 //Pick one of these board configs or add your own
-//#define Board1  //This is a generic P2 board
+#define Board1  //This is a generic P2 board
 //#define Dazzler  //This is a special P2 based board with Arduino layout to host Dazzler 
-#define AntaresB  //This is a special P2 based board that outputs VGA from EVE
+//#define AntaresB  //This is a special P2 based board that outputs VGA from EVE
 
 //Settings for various types of displays are here, the define above selects display settings in this file
 #include "DisplaySettings.h" 
