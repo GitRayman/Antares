@@ -18,9 +18,9 @@
 - This example sets up a media fifo in top of RAM_G, copies a jpg or png image into the media fifo and then tells EVE to decompress the image to bottom of RAM_G, finally shows the image
 - Note:  Not really using the media fifo as a fifo here, just as a buffer to hold uncompressed image
 
-## Examples for Antares-B
+# Examples for Antares-B
 > These examples only really work in 720p using the Anteres-B hardware
 
-# CursorTest1.c
+## CursorTest1.c
 - This example shows a mouse cursor on top of a large image.  The cursor can be controlled via USB mouse connected to Antares-B's USB port.
 
