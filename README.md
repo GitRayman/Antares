@@ -16,13 +16,19 @@ This library has been tested with [Matrix Orbital](https://www.matrixorbital.com
   > Other settings, such as P2 frequency, serial I/O baud rate, and I/O pins for uSD card are also defined there
 - The list of display options is in DisplaySettings.h, which is included in Platform.h
   - The touchscreen options are also definined here
-  - Resistive touchscreens have extra options for how to handle the calibration data 
+  - Resistive touchscreens have extra options for how to handle the calibration data
+- Once can also build and run these examples using the command line.  See "build.bat" for how to build this way.  Use loadp2.exe to load the built code with command line options such as "-9 D:\Propeller2\uSD_Contents -t -k -b  2000000 Antares.binary".
+- Microsoft Visual Studio (even the free Community Edition) can also be used to compile and launch this code and a solution and project file is included here for that uses.
+  - With the solution open, simply edit the "build.bat" file to uncomment the file you want to compile.
+  - You can then Build->Build Antares with the menu or push the green play button next to "Local Windows Debugger" to launch.
+  - More instructions for doing this are [given here](http://www.rayslogic.com/Propeller2/VisualStudio_P2.htm). 
 
 ## References
 - The [Gameduino 3 page](https://excamera.com/sphinx/gameduino3/) has several resources include a book on how to use it and a description of their examples.
 - The [EVE 2/3 Programming Guide](https://brtchip.com/wp-content/uploads/Support/Documentation/Programming_Guides/ICs/EVE/BRT_AN_033_BT81X_Series_Programming_Guide.pdf) is extremely useful for figuring out how to interface with EVE.
 - The [EVE IC Datasheets](https://brtchip.com/datasheets/#toggle-id-1) are also very useful. 
 - In addition to the [Gameduino library](https://github.com/jamesbowman/gd2-lib) and the [Matrix Orbital library](https://github.com/MatrixOrbital/EVE2-Library), there are several [FTDI (AKA Bridgetek) examples](https://brtchip.com/SoftwareExamples-eve/) that may work with some adaptation.  The FTDI API is full featured, but very complex.  The Matrix Orbital version of the lower level interfacing used by Antares is much simpler to follow.
+- [Rayslogic.com](http://www.rayslogic.com/) has info on the P2 microprocessor. 
 
 ## Offshoots
 Some offshoots of Antares are:
