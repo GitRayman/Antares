@@ -9,8 +9,8 @@ The Matrix Orbital library was used for the low level interface.
 This library has been tested with Matrix Orbital and Newhaven EVE displays.
 
 Some offshoots of Antares are:
-Antares-Assets:  A port of the Gameduino asset builder that runs natively on the P2.
-Antares-B:  EVE to 720p adapter board (VGA and HDMI versions in development).  Let's you connect EVE to TV or monitor for HD graphics.
-Antares-Panels:  A helper API for more easily generating and interfacing with GUI elements.
+>Antares-Assets:  A port of the Gameduino asset builder that runs natively on the P2.
+>Antares-B:  EVE to 720p adapter board (VGA and HDMI versions in development).  Let's you connect EVE to TV or monitor for HD graphics.
+>Antares-Panels:  A helper API for more easily generating and interfacing with GUI elements.
 
 
