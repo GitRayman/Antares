@@ -29,8 +29,8 @@ REM C:\FlexProp\bin\flexspin.exe -O2,!cse -2 -DFF_USE_LFN  -L C:\FlexProp\includ
 
 REM Examples by RJA
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\png.c"
-C:\FlexProp\bin\flexspin.exe -2 -DFF_USE_LFN=1 -L C:\FlexProp\include -o Antares.binary "Examples\Fonts.c"
-REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\AntLogo.c"
+REM C:\FlexProp\bin\flexspin.exe -2 -DFF_USE_LFN=1 -L C:\FlexProp\include -o Antares.binary "Examples\Fonts.c"
+C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\AntLogo.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\TestAssets.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\MediaFifoTest1.c"
 REM C:\FlexProp\bin\flexspin.exe -2 -L C:\FlexProp\include -o Antares.binary "Examples\CursorTest1.c"

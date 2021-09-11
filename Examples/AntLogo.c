@@ -1,4 +1,4 @@
-#include "Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
+#include "../Antares/Antares.h"   //RJA implementing this gd2-lib code using Matrix Orbital's EVE driver
 
 //RJA:  Antares project logo
 
@@ -23,23 +23,38 @@ void loop()
     AntB.y = h / 2 - h / 12;
 
     //draw lines between stars
-    int linewidth = 2 * h / 720;
+    int linewidth;
     int o;
-    o = 15 * w / 1280;
-    DrawLine(AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o, RGB(100, 100, 100), linewidth);
-    o = 5 * w / 1280;
-    DrawLine(AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o, RGB(100, 100, 100), linewidth);
-    o = -5 * w / 1280;
-    DrawLine(AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o, RGB(100, 100, 100), linewidth);
-    o = -15 * w / 1280;
-    DrawLine(AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o, RGB(100, 100, 100), linewidth);
+    int s; //scale for offset
+    if (h > 512) 
+    {//large screen
+        s = 5;
+        linewidth = 2;
+    }
+    else
+    {//small screen
+        s = 2; 
+        linewidth = 1;
+    }
+    o = s*3;
+    DrawLine(AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o, RGB(10, 10, 10), linewidth);
+    //printf("Line from %d,%d to %d,%d\n", AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o);
+    o = s;
+    DrawLine(AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o, RGB(10, 10, 10), linewidth);
+    o = -s;
+    DrawLine(AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o, RGB(10, 10, 10), linewidth);
+    o = -s*3;
+    DrawLine(AntA.x + o, AntA.y - o, AntB.x + o, AntB.y - o, RGB(10, 10, 10), linewidth);
 
     //draw stars on top of lines
     DrawFilledCircle(AntA.x, AntA.y, RGB(250, 40, 40), w / 12);
     DrawFilledCircle(AntB.x, AntB.y, RGB(40, 40, 250), w / 24);
 
     //draw text at top
-    DrawText(w/2, h/8, 34, OPT_CENTERX, (char *) "Antares", RGB(0,0,0));
+    if (w>512)
+        DrawText(w/2, h/8, 34, OPT_CENTERX, (char *) "Antares", RGB(0,0,0));
+    else
+        DrawText(w / 2, h / 8, 31, OPT_CENTERX, (char*)"Antares", RGB(0, 0, 0));
 
     swap();
 }
