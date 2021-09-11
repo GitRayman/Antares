@@ -9,15 +9,23 @@
 #define CONTROL_UP    4
 #define CONTROL_DOWN  8
 
+byte dazzler = 0, sf = 1;
+
 typedef struct ControllerClass {
     void begin() {
       prev = 0;
     }
-    byte read() {
+    byte readFake() {
         byte r = 0;//RJA needs to fix input inputs.tag& (CONTROL_LEFT | CONTROL_RIGHT | CONTROL_UP | CONTROL_DOWN);
       byte edge = r & ~prev;
       prev = r;
       return edge;
+    }
+    byte read(uint8_t input) {
+        byte r = input & (CONTROL_LEFT | CONTROL_RIGHT | CONTROL_UP | CONTROL_DOWN);
+        byte edge = r & ~prev;
+        prev = r;
+        return edge;
     }
     byte prev;
 } Controller;
@@ -139,9 +147,9 @@ static int riverat(byte y, uint16_t tt)
 
 static void squarewave(uint16_t freq, byte amp)
 {
-  wr(REG_VOL_SOUND, amp);
-  wr16(REG_SOUND, (freq << 8) | 0x01);
-  wr(REG_PLAY, 1);
+  wr(RAM_REG + REG_VOL_SOUND, amp);
+  wr16(RAM_REG + REG_SOUND, (freq << 8) | 0x01);
+  wr(RAM_REG + REG_PLAY, 1);
 }
 
 static void sound()
@@ -173,7 +181,7 @@ static void rotate_around(int x, int y, int a)
 
 void game_over()
 {
-  wr(REG_VOL_SOUND, 0);
+  wr(RAM_REG + REG_VOL_SOUND, 0);
   for (byte i = 0; i < 60; i++) {
     Clear();
 
@@ -205,16 +213,19 @@ void loop()
   static uint32_t counter;
   static int prevt;
 
+  int x0 = 0;
+
   Clear();
   Tag(1);
   BitmapHandle(SPRITES_HANDLE);
   SaveContext();
-  ScissorSize(224, 256);
+  ScissorXY(x0, 0);
+  ScissorSize(sf*224, sf*256);
   Begin(BITMAPS);
   Vertex2ii(0, 0, BACKGROUND_HANDLE, 0);   // Background bitmap
 
-  wr(REG_TAG_X, frogx - 8);
-  wr(REG_TAG_Y, frogy);
+  wr32(RAM_REG + REG_TAG_X, frogx - 8);
+  wr32(RAM_REG + REG_TAG_Y, frogy);
 
   Tag(2);
   AlphaFunc(GREATER, 0); // on road, don't tag transparent pixels
@@ -301,13 +312,29 @@ void loop()
 
   TagMask(1);
 
-  // player control.  If button pressed, start the 'leaping' counter
-  byte con = Control.read();
+  bool bUsingTouch = false;
+#ifdef USE_TOUCHSCREEN
+  if (USE_TOUCHSCREEN)
+      bUsingTouch = true;
+#endif // USE_TOUCHSCREEN
 
-  if (random() < 10)
-  {//RJA adding fake input
-      con = CONTROL_UP;
+  byte con;
+  if (bUsingTouch)
+  {//Use touchscreen for input
+    // player control.  If button pressed, start the 'leaping' counter
+    con = Control.read(inputs.tag);
   }
+  else
+  {//Fake input
+      // player control.  If button pressed, start the 'leaping' counter
+      con = Control.readFake();
+      if (random() < 10)
+      {//RJA adding fake input
+          con = CONTROL_UP;
+      }
+
+  }
+
 
   if (!dying && (leaping == 0) && con) {
     frogdir = con;
@@ -368,16 +395,27 @@ void loop()
   // for (byte i = 0; i < 16; i++)
   //  wr(atxy(i, 30), (i < lives) ? BG_LIFE : BG_BLACK);
 
+
+  RestoreContext();
   swap();
 
-  get_inputs();
-  byte tag = rd(REG_TAG);
-  byte touching = (tag == 2);
 
-  if (dying) {
-      printf("Dying...\n");
-    if (++dying == 64) {
-      if (--lives == 0 || ti == 0) {
+  get_inputs();
+  byte tag = rd32(RAM_REG+REG_TAG);
+  byte touching = (tag == 2);
+  //if (tag!=0)
+  //  printf("tag=%d\n",tag);
+
+
+
+
+  if (dying) 
+  {
+    //printf("Dying...\n");
+    if (++dying == 64) 
+    {
+      if (--lives == 0 || ti == 0) 
+      {
         game_over();
         game_start();
         level_start();
@@ -393,6 +431,7 @@ void loop()
     if (tag == 2)
       dying = 1;
   }
+
   else if (frogy > 40) {      // river section
     if (!leaping) {
       // if touching something, frog is safe
