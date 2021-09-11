@@ -1,4 +1,5 @@
 # These are our examples for Antares
+> Many of these examples use files in the Assets folder that must be placed in the host's Plan9 folder or on uSD on P2 board.
 
 ## AntLogo.c
 - A simple example to show a logo for Antares using built in font and some graphical primitives
