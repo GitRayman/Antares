@@ -656,6 +656,7 @@ void get_inputs()
 #ifdef USE_TOUCHSCREEN
     if (USE_TOUCHSCREEN)
     {
+        uint8_t* bi = (uint8_t*)&inputs;
         if (RESISTIVE_TOUCH)
         {//for resistitve touch
             //finish();  //RJA doesn't think we need this here...
@@ -667,8 +668,7 @@ void get_inputs()
         }
         else
         {//For capacitive touch
-            //finish();  //RJA doesn't think we need this here...
-            uint8_t* bi = (uint8_t*)&inputs;
+            //finish();  //RJA doesn't think we need this here...            
             rd_n(bi, RAM_REG + REG_TRACKER, 4);
             rd_n(bi + 4, RAM_REG + REG_CTOUCH_TOUCH_XY, 4);
             rd_n(bi + 8, RAM_REG + REG_CTOUCH_TAG_XY, 4);
