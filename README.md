@@ -19,6 +19,7 @@ This library has been tested with [Matrix Orbital](https://www.matrixorbital.com
   - Resistive touchscreens have extra options for how to handle the calibration data 
 
 ## References
+- The [Gameduino 3 page](https://excamera.com/sphinx/gameduino3/) has several resources include a book on how to use it and a description of their examples.
 - The [EVE 2/3 Programming Guide](https://brtchip.com/wp-content/uploads/Support/Documentation/Programming_Guides/ICs/EVE/BRT_AN_033_BT81X_Series_Programming_Guide.pdf) is extremely useful for figuring out how to interface with EVE.
 - The [EVE IC Datasheets](https://brtchip.com/datasheets/#toggle-id-1) are also very useful. 
 - In addition to the [Gameduino library](https://github.com/jamesbowman/gd2-lib) and the [Matrix Orbital library](https://github.com/MatrixOrbital/EVE2-Library), there are several [FTDI (AKA Bridgetek) examples](https://brtchip.com/SoftwareExamples-eve/) that may work with some adaptation.  The FTDI API is full featured, but very complex.  The Matrix Orbital version of the lower level interfacing used by Antares is much simpler to follow.
