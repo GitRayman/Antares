@@ -76,6 +76,8 @@
 
 
 
+
+
 #ifdef EVE2_70
 #define DWIDTH     800
 #define DHEIGHT    480
@@ -144,8 +146,54 @@
 #define VSIZE      272
 #define CSPREAD      1
 #define DITHER       1
-#define USE_TOUCHSCREEN true
-#define RESISTIVE_TOUCH false
+#endif
+
+#ifdef EVE2_43_CT
+#define DWIDTH     480
+#define DHEIGHT    272
+#define PIXVOFFSET   0
+#define PIXHOFFSET   0
+#define HCYCLE     548
+#define HOFFSET     43
+#define HSYNC0       0
+#define HSYNC1      41
+#define VCYCLE     292
+#define VOFFSET     12
+#define VSYNC0       0
+#define VSYNC1      10
+#define PCLK         5
+#define SWIZZLE      0
+#define PCLK_POL     1
+#define HSIZE      480
+#define VSIZE      272
+#define CSPREAD      1
+#define DITHER       1
+#define CAPACITIVE_TOUCH  //Use capacitive touchscreen
+#endif
+
+#ifdef EVE2_43_RT
+#define DWIDTH     480
+#define DHEIGHT    272
+#define PIXVOFFSET   0
+#define PIXHOFFSET   0
+#define HCYCLE     548
+#define HOFFSET     43
+#define HSYNC0       0
+#define HSYNC1      41
+#define VCYCLE     292
+#define VOFFSET     12
+#define VSYNC0       0
+#define VSYNC1      10
+#define PCLK         5
+#define SWIZZLE      0
+#define PCLK_POL     1
+#define HSIZE      480
+#define VSIZE      272
+#define CSPREAD      1
+#define DITHER       1
+#define RESISTIVE_TOUCH  //Use resistive touchscreen
+#define STORE_RESISTIVE_CAL  //store and load resistive touchscreen calibrations to filesystem if defined
+//#define FORCE_RESISTIVE_CAL  //Always do resistive calibration if defined
 #endif
 
 #ifdef EVE2_39

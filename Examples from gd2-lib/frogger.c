@@ -313,10 +313,9 @@ void loop()
   TagMask(1);
 
   bool bUsingTouch = false;
-#ifdef USE_TOUCHSCREEN
-  if (USE_TOUCHSCREEN)
+#if defined(CAPACITIVE_TOUCH) || defined(RESISTIVE_TOUCH)
       bUsingTouch = true;
-#endif // USE_TOUCHSCREEN
+#endif // defined(CAPACITIVE_TOUCH) || defined(RESISTIVE_TOUCH)
 
   byte con;
   if (bUsingTouch)

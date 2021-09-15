@@ -87,9 +87,17 @@ void SPI_ReadBuffer(unsigned char *pBuffer, int n)
 
 // Call this function once at powerup to reset and initialize the Eve chip
 void FT81x_Init(void)
-{  
-    ////REMOVE ME
-    //_drvh(13);  //PSAVE:  select EVE as source for sync signals and not P2 on Eval Board Adapter
+{//Init eve  
+
+      //Turn on 12.375 MHz pin output for EVE, if needed
+#ifdef NCOPIN
+    __asm {
+        wrpin   #(P_NCO_FREQ | P_TT_11), #NCOPIN //smartpin NCO // 0b00000000000000000000000011001100, #NCOPIN //smartpin NCO
+        WXPIN   #NCOXPIN, #NCOPIN//##$0000_0080,#45'55  //base period
+        WYPIN   ##NCOYPIN, #NCOPIN//##$2000_0000,#45'55  //add amount per clock
+        drvh    #NCOPIN
+    }
+#endif  
 
     //Start up P2 SPI driver
     //for cogless version of SPI:  With clockdelay==0, get max bitrate ~6 MHz with 297 MHz P2 clock 
@@ -101,18 +109,6 @@ void FT81x_Init(void)
     printf("EVE powercycle complete.\n");
 
   uint32_t Ready = false;
-
-
-
-  //Turn on 12.375 MHz pin output for EVE, if needed
-#ifdef NCOPIN
-  __asm {
-      wrpin   #(P_NCO_FREQ | P_TT_11), #NCOPIN //smartpin NCO // 0b00000000000000000000000011001100, #NCOPIN //smartpin NCO
-      WXPIN   #NCOXPIN, #NCOPIN//##$0000_0080,#45'55  //base period
-      WYPIN   ##NCOYPIN, #NCOPIN//##$2000_0000,#45'55  //add amount per clock
-      drvh    #NCOPIN
-  }
-#endif  
 
 
   // Wakeup Eve
@@ -239,6 +235,47 @@ void FT81x_Init(void)
 
   Ready = rd32(REG_FREQUENCY + RAM_REG);
   printf("Clock freq = %d\n", Ready);
+
+//  //Now, handle resistive touch
+//#ifdef RESISTIVE_TOUCH
+//
+//#ifdef FORCE_RESISTIVE_CAL
+//        //SaveContext();
+//  Send_CMD(CLEAR_COLOR_RGB(0, 0, 0));
+//  Send_CMD(CLEAR(1, 1, 1));
+//  Cmd_Text(DWIDTH / 2, 2 * DHEIGHT / 3, 27, OPT_CENTER, "Tap on the dots to calibrate.");
+//  Cmd_Calibrate(0);                                           // This widget generates a blocking screen that doesn't unblock until 3 dots have been touched
+//  Send_CMD(DISPLAY());
+//  Send_CMD(CMD_SWAP);
+//  UpdateFIFO();                                               // Trigger the CoProcessor to start processing commands out of the FIFO
+//  //swap();
+//
+//  //Wait4CoProFIFOEmpty();                                      // wait here until the coprocessor has read and executed every pending command.
+//  uint16_t ReadReg;
+//  uint16_t WriteReg;
+//
+//  WriteReg = rd16(REG_CMD_WRITE + RAM_REG);
+//  do
+//  {
+//      _waitms(100);
+//      ReadReg = rd16(REG_CMD_READ + RAM_REG);
+//
+//
+//  } while (ReadReg != WriteReg);
+//
+//
+//  _waitms(500);
+//  //Cmd_Calibrate(0);
+//
+//
+//
+//#endif //FORCE_RESISTIVE_CAL
+//  ////If we have a resistive touchscreen, load cals or do calibration
+//  //int r;  //How Eric Smith can tell filesize
+//  //struct stat s;
+//
+//  //r = stat(filename, &s);
+//#endif //RESISTIVE_TOUCH
 
 }
 

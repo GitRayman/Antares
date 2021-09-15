@@ -480,23 +480,10 @@ void begin()
     printf("ftinit..\n");
     FT81x_Init();
  
-    //Make inital display list the prime swap()
-    //Cmd_SetBase(10);
-    Send_CMD(CMD_DLSTART);                   // Start a new display list
-    ClearColorRGB(0, 0, 0);
-    Clear();
-    swap();
-
-    vxf = 4;  //RJA:  EVE starts out with the need to shift pixel coordinates <<4 for vertex2f
-
-    //get filesystem ready
+//get filesystem ready
 #if defined(USE_SD)
     //mount("/files", _vfs_open_sdcard());  //For Eval pins
     mount("/files", _vfs_open_sdcardx(uSD_CLK, uSD_SS, uSD_MOSI, uSD_MISO));//clock pin, select pin, data in, and data out pins, in that order
-//#define uSD_MISO  44 
-//#define uSD_MOSI  46 
-//#define uSD_SS  47 
-//#define uSD_CLK  45
     chdir("/files");
 #elif defined(USE_HOST)
     mount("/files", _vfs_open_host());
@@ -504,8 +491,113 @@ void begin()
 #else
     #warning no file system specified, I hope you are compiling for PC
 #endif
+
+
+//Now, handle resistive touch
+#ifdef RESISTIVE_TOUCH
+
+#if defined(STORE_RESISTIVE_CAL)&& !defined(FORCE_RESISTIVE_CAL)
+//Try to load resistive cals from file
+  //If we have a resistive touchscreen, load cals or do calibration
+  int r;  //How Eric Smith can tell filesize
+  struct stat s;
+  char filename[] = "resist.cal";
+  r = stat(filename, &s);
+  bool bCalibrated = false;
+  if (r)
+  {//Load cal failed
+      printf("Can't stat %s\n", filename);
+  }
+  else
+  {
+      // Open the file on SD card by name
+      FILE* f = fopen(filename, "rb");
+      if (!f)
+      {//Load cal failed
+          Log("%s not open\n", filename);          
+      }
+      else
+      {//file is open, read and set cals
+          uint32_t cals[6];
+          int n = fread(cals, 1, 24, f);
+          if (n == 24)
+              bCalibrated = true;
+          wr_n(RAM_REG + REG_TOUCH_TRANSFORM_A, (char*) cals, 24);  //set cals
+          printf("Resistive touch cals loaded from files.\n");
+      }
+      fclose(f);
+  }
+  if (!bCalibrated)
+  {//load from file failed... Need to re-calibrate
+      printf("load cals from file failed... Need to re-calibrate\n");
+      CalibrateResistiveTouch();
+  }
+  
+
+#endif //defined(STORE_RESISTIVE_CAL)&& !defined(FORCE_RESISTIVE_CAL)
+
+#ifdef FORCE_RESISTIVE_CAL
+
+  CalibrateResistiveTouch();
+
+#endif //FORCE_RESISTIVE_CAL
+
+#endif //RESISTIVE_TOUCH
+
+
+//Make inital display list the prime swap()
+    //Cmd_SetBase(10);
+    Send_CMD(CMD_DLSTART);                   // Start a new display list
+    ClearColorRGB(0, 0, 0);
+    Clear();
+    swap();
+
+    vxf = 4;  //RJA:  EVE starts out with the need to shift pixel coordinates <<4 for vertex2f
 }
 
+void CalibrateResistiveTouch()
+{//calibrate touch screen
+    Send_CMD(CLEAR_COLOR_RGB(0, 0, 0));
+    Send_CMD(CLEAR(1, 1, 1));
+    Cmd_Text(DWIDTH / 2, 2 * DHEIGHT / 3, 27, OPT_CENTER, "Tap on the dots to calibrate.");
+    Cmd_Calibrate(0);                                           // This widget generates a blocking screen that doesn't unblock until 3 dots have been touched
+    Send_CMD(DISPLAY());
+    Send_CMD(CMD_SWAP);
+    UpdateFIFO();                                               // Trigger the CoProcessor to start processing commands out of the FIFO
+
+    //Wait4CoProFIFOEmpty();                                      // wait here until the coprocessor has read and executed every pending command.
+    uint16_t ReadReg;
+    uint16_t WriteReg;
+
+    WriteReg = rd16(REG_CMD_WRITE + RAM_REG);
+    do
+    {//wait for calibrate to finish
+        _waitms(100);
+        ReadReg = rd16(REG_CMD_READ + RAM_REG);
+
+
+    } while (ReadReg != WriteReg);
+
+    _waitms(500);
+
+#ifdef STORE_RESISTIVE_CAL
+    //save settings to file
+    char filename[] = "resist.cal";
+    // Open the file on SD card by name
+    FILE* f = fopen(filename, "wb");
+    if (!f)
+    {//Load cal failed
+        Log("%s not open\n", filename);
+    }
+    uint32_t cals[6];
+    rd_n((char*)cals, RAM_REG + REG_TOUCH_TRANSFORM_A,  24);  //get cals
+    int n = fwrite((char*) cals, 1, 24, f);
+    fclose(f);
+    printf("Cals written to file %s\n", filename);
+    
+    
+#endif //STORE_RESISTIVE_CAL
+}
 
 
 void Clear()
@@ -615,25 +707,28 @@ typedef struct  xyStruct {
     //int nearer_than(int distance, class xy& other);
 } xy;
 
+#ifdef RESISTIVE_TOUCH
 //For resistive touch
-//struct {
-//
-//    uint16_t track_tag;
-//    uint16_t track_val;
-//    uint16_t rz;
-//    uint16_t __dummy_1;
-//    int16_t y;
-//    int16_t x;
-//
-//    int16_t tag_y;
-//    int16_t tag_x;
-//    uint8_t tag;
-//    uint8_t ptag;
-//    uint8_t touching;
-//    xy xytouch;
-//    //Add wii back in?
-//} inputs;
+struct {
 
+    uint16_t track_tag;
+    uint16_t track_val;
+    uint16_t rz;
+    uint16_t __dummy_1;
+    int16_t y;
+    int16_t x;
+
+    int16_t tag_y;
+    int16_t tag_x;
+    uint8_t tag;
+    uint8_t ptag;
+    uint8_t touching;
+    xy xytouch;
+    //Add wii back in?
+} inputs;
+#endif //RESISTIVE_TOUCH
+
+#ifdef CAPACITIVE_TOUCH
 //For capacitive touch
 struct {
     uint16_t track_tag;
@@ -650,35 +745,36 @@ struct {
     xy xytouch;
     //Add wii back in?
 } inputs;
+#endif //CAPACITIVE_TOUCH
 
 void get_inputs()
 {//10Sep21: Fixing this for touchscreen use
-#ifdef USE_TOUCHSCREEN
-    if (USE_TOUCHSCREEN)
-    {
-        uint8_t* bi = (uint8_t*)&inputs;
-        if (RESISTIVE_TOUCH)
-        {//for resistitve touch
-            //finish();  //RJA doesn't think we need this here...
-            rd_n(bi, RAM_REG + REG_TRACKER, 4);
-            rd_n(bi + 4, RAM_REG + REG_TOUCH_RZ, 13);
-            rd_n(bi + 17, RAM_REG + REG_TAG, 1);
-            inputs.touching = (inputs.x != -32768);
-            inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
-        }
-        else
-        {//For capacitive touch
-            //finish();  //RJA doesn't think we need this here...            
-            rd_n(bi, RAM_REG + REG_TRACKER, 4);
-            rd_n(bi + 4, RAM_REG + REG_CTOUCH_TOUCH_XY, 4);
-            rd_n(bi + 8, RAM_REG + REG_CTOUCH_TAG_XY, 4);
-            rd_n(bi + 12, RAM_REG + REG_CTOUCH_TAG, 1);
-            inputs.touching = (inputs.x != -32768);
-            inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
-        }
+        
+#ifdef RESISTIVE_TOUCH
+    uint8_t* bi = (uint8_t*)&inputs;
+    {//for resistitve touch
+        //finish();  //RJA doesn't think we need this here...
+        rd_n(bi, RAM_REG + REG_TRACKER, 4);
+        rd_n(bi + 4, RAM_REG + REG_TOUCH_RZ, 13);
+        rd_n(bi + 17, RAM_REG + REG_TAG, 1);
+        inputs.touching = (inputs.x != -32768);
+        inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
+        //printf("Touching %d,%d\n",inputs.x, inputs.y);
     }
+#endif //RESISTIVE_TOUCH
 
-#endif //USE_TOUCHSCREEN
+#ifdef CAPACITIVE_TOUCH
+    uint8_t* bi = (uint8_t*)&inputs;
+    {//For capacitive touch
+        //finish();  //RJA doesn't think we need this here...            
+        rd_n(bi, RAM_REG + REG_TRACKER, 4);
+        rd_n(bi + 4, RAM_REG + REG_CTOUCH_TOUCH_XY, 4);
+        rd_n(bi + 8, RAM_REG + REG_CTOUCH_TAG_XY, 4);
+        rd_n(bi + 12, RAM_REG + REG_CTOUCH_TAG, 1);
+        inputs.touching = (inputs.x != -32768);
+        inputs.xytouch.set(PIXELS(inputs.x), PIXELS(inputs.y));
+    }
+#endif //CAPACITIVE_TOUCH
 }
 
 

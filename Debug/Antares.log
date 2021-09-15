@@ -5,10 +5,14 @@
   mount.c
   sprintf.c
   fprintf.c
+  fopen.c
+  fwrite.c
   malloc.c
   mount.c
   fmt.c
   posixio.c
+  isatty.c
+  fflush.c
   strncpy.c
   strncat.c
   strncmp.c
@@ -20,10 +24,11 @@
   vfs.c
   errno.c
   posixio.c
+  ioctl.c
   ieee32.c
   strncmp.c
   strrchr.c
   malloc.c
   Antares.p2asm
   Done.
-  Program size is 69968 bytes
+  Program size is 73724 bytes

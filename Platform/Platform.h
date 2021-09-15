@@ -12,7 +12,8 @@
 //EVE Display Type
 //Pick one: (see more options in DisplaySettings.h)
 //#define EVE2_70  //7" WVGA LCD
-#define EVE2_43  //4.3" LCD
+//#define EVE2_43_CT  //4.3" LCD with capacitive touch
+#define EVE2_43_RT  //4.3" LCD with resistive touch
 //#define EVE3_720p  //Antares-B 
 //#define EVE3_VGA   //Antares-B
 

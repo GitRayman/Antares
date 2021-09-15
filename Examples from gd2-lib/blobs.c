@@ -22,11 +22,18 @@ void loop()
   get_inputs();  //RJA:  This would update touchscreen data if we had a touchscreen
   if (inputs.x != -32768)  
   {
-#ifndef USE_TOUCHSCREEN   
+    bool bUsingTouch = false;
+#if defined(CAPACITIVE_TOUCH) || defined(RESISTIVE_TOUCH)
+    bUsingTouch = true;
+#endif // defined(CAPACITIVE_TOUCH) || defined(RESISTIVE_TOUCH)
+
+    if (!bUsingTouch)
+    {
       //RJA don't have real touchscreen, so faking touches
       inputs.xytouch.x = (rand() % w)*16;
       inputs.xytouch.y = (rand() % h) *16;
-#endif //USE_TOUCHSCREEN
+    }
+
 
     //printf("Touching: %d, %d\n", inputs.xytouch.x, inputs.xytouch.y);
     blobs[blob_i] = inputs.xytouch;  
